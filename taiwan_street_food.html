@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Taiwan Street Food</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Shadows+Into+Light&display=swap');
+
+    body {
+      background-color: black;
+    }
+
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background-image: url("https://cornpic.com/images/2022/03/30/pexels-chait-goli-4318371.jpg");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .card {
+      display: grid;
+      grid-template-columns: 300px;
+      grid-template-rows: 210px 210px 80px;
+      grid-template-areas: "image" "text";
+
+      border-radius: 18px;
+      background: white;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+      font-family: roboto;
+      text-align: center;
+
+      transition: 0.5s ease;
+      cursor: pointer;
+      margin:30px;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .card-image {
+      grid-area: image;
+      background: url("https://www.gomaji.com/blog/wp-content/uploads/2021/01/116003664_137577631338167_5963112421661311888_n-e1610808000416.jpg");
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background-size: cover;
+    }
+
+    .card-text {
+      grid-area: text;
+      margin: 25px;
+      transform: translateZ(30px);
+    }
+    
+
+    .card-text p {
+      color: grey;
+      font-size:15px;
+      font-weight: 300;
+    }
+    .card-text h2 {
+      margin-top:0px;
+      font-size:28px;
+    }
+
+    .js-tilt-glare {
+      border-radius: 18px;
+    }
+    
+
+    /*card2*/
+    .card-image.card2 {
+      background: url("https://tokyo-kitchen.icook.network/uploads/recipe/cover/279935/28d2a7f728c3fdd0.jpg");
+      background-size: cover;
+    }
+    
+    
+    /*card3*/
+    .card-image.card3 {
+      background: url("https://candylife.tw/wp-content/uploads/20210914103812_7.jpg");
+      background-size: cover;
+    }
+
+    /*card4*/
+    .card-image.card4 {
+      background: url("https://heho.com.tw/wp-content/uploads/2018/06/%E5%86%B0%E7%8F%8D%E7%8F%A0%E5%A5%B6%E8%8C%B6.png");
+      background-size: cover;
+    }
+
+    /*card5*/
+    .card-image.card5 {
+      background: url("https://sweetamy.tw/wp-content/uploads/2021/08/IMG20210721122959-1-scaled.jpg");
+      background-size: cover;
+    }
+
+    /*card6*/
+    .card-image.card6 {
+      background: url("https://rs.joo.com.tw/website/uploads_product/website_794/P0079400074152_3_287162.jpg");
+      background-size: cover;
+    }
+
+    /*card7*/
+    .card-image.card7 {
+      background: url("https://pic.pimg.tw/anrine910070/1506834016-2277347776.jpg");
+      background-size: cover;
+    }
+
+    /*card8*/
+    .card-image.card8 {
+      background: url("https://www.smartm.com.tw/data/Images/38/cc/df/8d/644f712a94beeea2013d7d3.jpg");
+      background-size: cover;
+    }
+
+    /*card9*/
+    .card-image.card9 {
+      background: url("https://2.bp.blogspot.com/-5d_Pv5OSg7o/W6fszKXsffI/AAAAAAAAkfs/o3H7euLGhjM9JpqQledRSRCAVy21Tw9JACLcBGAs/s1600/471B41CB-0E5E-4F2D-B46A-76A91A2E5DF7.JPG");
+      background-size: cover;
+    }
+
+    /*card10*/
+    .card-image.card10 {
+      background: url("https://static.iyp.tw/2123/products/photooriginal-1574493-T8Yf7.jpg");
+      background-size: cover;
+    }
+
+    /*card11*/
+    .card-image.card11 {
+      background: url("https://media-cdn.tripadvisor.com/media/photo-s/16/27/84/95/caption.jpg");
+      background-size: cover;
+    }
+
+    /*card12*/
+    .card-image.card12 {
+      background: url("https://e5rxtr4t5ah.exactdn.com/wp-content/uploads/2019/01/tian-bu-la.jpg");
+      background-size: cover;
+    }
+
+    /*card13*/
+    .card-image.card13 {
+      background: url("https://tokyo-kitchen.icook.network/uploads/recipe/cover/275847/7fd4785d3bcbe38b.jpg");
+      background-size: cover;
+    }
+
+    /*card14*/
+    .card-image.card14 {
+      background: url("https://tokyo-kitchen.icook.network/uploads/recipe/cover/400471/15798e2722fbd250.jpg");
+      background-size: cover;
+    }
+    
+    /*card15*/
+    .card-image.card15 {
+      background: url("https://www.masterpon.com/wp-content/uploads/S__35397642.jpg");
+      background-size: cover;
+    }
+
+    .grid-container {
+      height: 100vh;
+      background-image: url("https://cornpic.com/images/2022/03/30/vernon-raineil-cenzon-6rEPAbrXNaY-unsplash.jpg");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 45% auto 45%;
+      color: white;
+      word-spacing: 10px;
+      overflow-y: auto;
+      
+    }
+
+    .part02 {
+      display: flex;
+      height: 300px;
+      background-color: black;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .part02 h1 {
+      
+      font-size: 64px;
+      font-weight: 700;
+      word-spacing: 10px;
+    }
+      
+
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="justify-content: center;">
+      <a class="navbar-brand" href="https://gyoub62vy6arkks6piljcg.on.drv.tw/MyWeb/project.html"><span class="iconify" data-icon="ci:home-alt-fill" data-width="40" data-height="40"></span></a>
+    </nav>
+      <div class="grid-container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div><h3 style="background-color: rgba(15, 15, 15, 0.678); border-radius: 2px; margin-left: 15px;">Night markets in Taiwan are known for xiaochi, a category of food translating to "small eats". Served in small portions at inexpensive prices, xiaochi is usually eaten in an informal setting, either on small folding tables or while walking.</h3></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+        <h3 style="background-color: rgba(15, 15, 15, 0.678); border-radius: 2px; margin-right: 15px;">Though some of the xiaochi foods available will change from year to year with passing fads, certain xiaochi foods such as oyster omelets, and stinky tofu persist and have become staples in many night markets. Foreign influences, especially Japanese and American, are also present in night markets. Sometimes, the night markets of a city, or even just one particular market, becomes well known for a certain type of food that is unique to the area.</h3>
+        </div>
+      </div>
+      <div class="part02"><h1>Top 15 Taiwan XiaoChi</h1></div>
+      <div class="main">
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E8%87%AD%E8%B1%86%E8%85%90/';">
+          <div class="card-image"></div>
+          <div class="card-text">
+            <h2>Stinky tofu</h2>
+            <p>Stinky tofu is a Chinese form of fermented tofu that has a strong odor. It is usually sold at night markets or roadside stands as a snack, or in lunch bars as a side dish, rather than in restaurants. Traditionally the dish is fermented in a brine with vegetables and meat, sometimes for a period of months.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E9%B9%B9%E9%85%A5%E9%9B%9E/';">
+          <div class="card-image card2"></div>
+          <div class="card-text card2">
+            <h2>Taiwanese fried chicken</h2>
+            <p>Taiwanese fried chicken, westernized as popcorn chicken, is a dish in Taiwanese cuisine commonly found as street snack and is indispensable to the night markets in Taiwan. It consists of bite-sized pieces of chicken, coated and fried with flour and seasoning mixture.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E6%BB%B7%E5%91%B3/';">
+          <div class="card-image card3"></div>
+          <div class="card-text card3">
+            <h2>Lou mei</h2>
+            <p>Lou mei is the Cantonese name given to dishes made by braising in a sauce known as a master stock or lou sauce. The dish is known as lu wei in Taiwan. Lou mei can be made from meat, offal, and other off-cuts. The most common varieties are beef, pork, duck and chicken.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E7%8F%8D%E7%8F%A0%E5%A5%B6%E8%8C%B6/';">
+          <div class="card-image card4"></div>
+          <div class="card-text card4">
+            <h2>Bubble tea</h2>
+            <p>Bubble tea is a tea-based drink that originated in Taiwan in the early 1980s. It most commonly consists of tea accompanied by chewy tapioca balls, but it can be made with other toppings as well.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E6%BB%B7%E8%82%89%E9%A3%AF/';">
+          <div class="card-image card5"></div>
+          <div class="card-text card5">
+            <h2>Lo bah png</h2>
+            <p>Lo bah png, as known as minced pork rice, is a rice dish that is commonly seen throughout Taiwan and Southern Fujian. The flavor may vary from one region to another, but the basic ingredients remain the same: ground pork marinated and boiled in soy sauce served on top of steamed rice. It is a type of gaifan dish.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E7%89%9B%E8%82%89%E9%BA%B5/';">
+          <div class="card-image card6"></div>
+          <div class="card-text card6">
+            <h2>Beef noodle soup</h2>
+            <p>Beef noodle soup is a noodle soup made of stewed or braised beef, beef broth, vegetables and noodles. It exists in various forms throughout East and Southeast Asia.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E8%82%89%E5%9C%93/';">
+          <div class="card-image card7"></div>
+          <div class="card-text card7">
+            <h2>Ba-wan</h2>
+            <p>Ba-wan is a Taiwanese street food, consisting of a 6–8 centimetres diameter disk-shaped translucent dough made of sweet potato starch filled with a savory stuffing and served with a sweet and savory sauce.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E5%89%B2%E5%8C%85/';">
+          <div class="card-image card8"></div>
+          <div class="card-text card8">
+            <h2>Gua bao</h2>
+            <p>Gua bao, also known as pork belly buns, ambiguously, bao, or erroneously as the bao bun is a type of lotus leaf bun originating from Fujian cuisine. It is also a popular street food in Singapore, Malaysia, Taiwan, and Nagasaki Chinatown in Japan.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E8%B1%AC%E8%A1%80%E7%B3%95/';">
+          <div class="card-image card9"></div>
+          <div class="card-text card9">
+            <h2>Ti hoeh koe</h2>
+            <p>Ti hoeh koe, as known as pig's blood cake, is a blood pudding served on a stick as street food in Taiwan. Its alternative name is black cake. It is made with steamed pork blood, sticky rice and then coated in peanut powder and coriander with dipping sauces.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E5%89%89%E5%86%B0/';">
+          <div class="card-image card10"></div>
+          <div class="card-text card10">
+            <h2>Tshuah-ping</h2>
+            <p>Tshuah-ping or Tsua bing, also known as Baobing in Mandarin, is a shaved ice dessert introduced to Taiwan during Taiwan under Japanese rule, and then spread from Taiwan to Greater China and countries with large regional Overseas Chinese populations such as Malaysia and Singapore.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E8%9A%B5%E4%BB%94%E7%85%8E/';">
+          <div class="card-image card11"></div>
+          <div class="card-text card11">
+            <h2>Oyster omelette</h2>
+            <p>The oyster omelette, as known as o-a-tsian, o-chien or orh luak is a dish of Hokkien and Teochew origin that is renowned for its savory flavor in its native Chaoshan and Minnan region, along with Taiwan  and many parts of Southeast Asia.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E7%94%9C%E4%B8%8D%E8%BE%A3/';">
+          <div class="card-image card12"></div>
+          <div class="card-text card12">
+            <h2>Tian bu la</h2>
+            <p>Tian bu la are Taiwanese fish cakes made with a thick paste which incorporates mild white fish fillets, eggs, and potato or tapioca flour. The generously seasoned mixture is piped directly in the sizzling oil, then deep-fried until golden brown.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E9%AD%9A%E4%B8%B8%E6%B9%AF/';">
+          <div class="card-image card13"></div>
+          <div class="card-text card13">
+            <h2>Fish ball soup</h2>
+            <p>Fish balls are rounded meat balls made from fish paste which are then boiled or deep fried. Similar in composition to fishcake, fish balls are often made from fish mince or surimi, salt, and a culinary binder such as tapioca flour, corn, or potato starch.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E8%97%A5%E7%87%89%E6%8E%92%E9%AA%A8/';">
+          <div class="card-image card14"></div>
+          <div class="card-text card14">
+            <h2>Ribs stewed with medicinal herbs</h2>
+            <p>This is an iconic dish of Taiwan's night markets. It's very popular especially in the winter, because the medicinal soup will help keep your body warm. Unlike Bak Kut Teh, it uses more medicinal herbs instead of pepper and garlic.</p>
+          </div>
+        </div>
+        <div class="card" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.8" onclick="location.href='https://www.google.com/maps/search/%E9%BA%BB%E7%B3%AC/';">
+          <div class="card-image card15"></div>
+          <div class="card-text card15">
+            <h2>Mochi</h2>
+            <p>Mochi is a Japanese rice cake made of mochigome, a short-grain japonica glutinous rice, and sometimes other ingredients such as water, sugar, and cornstarch. The rice is pounded into paste and molded into the desired shape. In Japan it is traditionally made in a ceremony called mochitsuki.</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    <!-- Optional JavaScript -->
+    <script>
+      var VanillaTilt = (function () {
+      'use strict';
+
+      /**
+       * Created by Sergiu Șandor (micku7zu) on 1/27/2017.
+       * Original idea: https://github.com/gijsroge/tilt.js
+       * MIT License.
+       * Version 1.7.2
+       */
+
+      class VanillaTilt {
+        constructor(element, settings = {}) {
+          if (!(element instanceof Node)) {
+            throw ("Can't initialize VanillaTilt because " + element + " is not a Node.");
+          }
+
+          this.width = null;
+          this.height = null;
+          this.clientWidth = null;
+          this.clientHeight = null;
+          this.left = null;
+          this.top = null;
+
+          // for Gyroscope sampling
+          this.gammazero = null;
+          this.betazero = null;
+          this.lastgammazero = null;
+          this.lastbetazero = null;
+
+          this.transitionTimeout = null;
+          this.updateCall = null;
+          this.event = null;
+
+          this.updateBind = this.update.bind(this);
+          this.resetBind = this.reset.bind(this);
+
+          this.element = element;
+          this.settings = this.extendSettings(settings);
+
+          this.reverse = this.settings.reverse ? -1 : 1;
+          this.glare = VanillaTilt.isSettingTrue(this.settings.glare);
+          this.glarePrerender = VanillaTilt.isSettingTrue(this.settings["glare-prerender"]);
+          this.fullPageListening = VanillaTilt.isSettingTrue(this.settings["full-page-listening"]);
+          this.gyroscope = VanillaTilt.isSettingTrue(this.settings.gyroscope);
+          this.gyroscopeSamples = this.settings.gyroscopeSamples;
+
+          this.elementListener = this.getElementListener();
+
+          if (this.glare) {
+            this.prepareGlare();
+          }
+
+          if (this.fullPageListening) {
+            this.updateClientSize();
+          }
+
+          this.addEventListeners();
+          this.reset();
+          this.updateInitialPosition();
+        }
+
+        static isSettingTrue(setting) {
+          return setting === "" || setting === true || setting === 1;
+        }
+
+        /**
+         * Method returns element what will be listen mouse events
+         * @return {Node}
+         */
+        getElementListener() {
+          if (this.fullPageListening) {
+            return window.document;
+          }
+
+          if (typeof this.settings["mouse-event-element"] === "string") {
+            const mouseEventElement = document.querySelector(this.settings["mouse-event-element"]);
+
+            if (mouseEventElement) {
+              return mouseEventElement;
+            }
+          }
+
+          if (this.settings["mouse-event-element"] instanceof Node) {
+            return this.settings["mouse-event-element"];
+          }
+
+          return this.element;
+        }
+
+        /**
+         * Method set listen methods for this.elementListener
+         * @return {Node}
+         */
+        addEventListeners() {
+          this.onMouseEnterBind = this.onMouseEnter.bind(this);
+          this.onMouseMoveBind = this.onMouseMove.bind(this);
+          this.onMouseLeaveBind = this.onMouseLeave.bind(this);
+          this.onWindowResizeBind = this.onWindowResize.bind(this);
+          this.onDeviceOrientationBind = this.onDeviceOrientation.bind(this);
+
+          this.elementListener.addEventListener("mouseenter", this.onMouseEnterBind);
+          this.elementListener.addEventListener("mouseleave", this.onMouseLeaveBind);
+          this.elementListener.addEventListener("mousemove", this.onMouseMoveBind);
+
+          if (this.glare || this.fullPageListening) {
+            window.addEventListener("resize", this.onWindowResizeBind);
+          }
+
+          if (this.gyroscope) {
+            window.addEventListener("deviceorientation", this.onDeviceOrientationBind);
+          }
+        }
+
+        /**
+         * Method remove event listeners from current this.elementListener
+         */
+        removeEventListeners() {
+          this.elementListener.removeEventListener("mouseenter", this.onMouseEnterBind);
+          this.elementListener.removeEventListener("mouseleave", this.onMouseLeaveBind);
+          this.elementListener.removeEventListener("mousemove", this.onMouseMoveBind);
+
+          if (this.gyroscope) {
+            window.removeEventListener("deviceorientation", this.onDeviceOrientationBind);
+          }
+
+          if (this.glare || this.fullPageListening) {
+            window.removeEventListener("resize", this.onWindowResizeBind);
+          }
+        }
+
+        destroy() {
+          clearTimeout(this.transitionTimeout);
+          if (this.updateCall !== null) {
+            cancelAnimationFrame(this.updateCall);
+          }
+
+          this.reset();
+
+          this.removeEventListeners();
+          this.element.vanillaTilt = null;
+          delete this.element.vanillaTilt;
+
+          this.element = null;
+        }
+
+        onDeviceOrientation(event) {
+          if (event.gamma === null || event.beta === null) {
+            return;
+          }
+
+          this.updateElementPosition();
+
+          if (this.gyroscopeSamples > 0) {
+            this.lastgammazero = this.gammazero;
+            this.lastbetazero = this.betazero;
+
+            if (this.gammazero === null) {
+              this.gammazero = event.gamma;
+              this.betazero = event.beta;
+            } else {
+              this.gammazero = (event.gamma + this.lastgammazero) / 2;
+              this.betazero = (event.beta + this.lastbetazero) / 2;
+            }
+
+            this.gyroscopeSamples -= 1;
+          }
+
+          const totalAngleX = this.settings.gyroscopeMaxAngleX - this.settings.gyroscopeMinAngleX;
+          const totalAngleY = this.settings.gyroscopeMaxAngleY - this.settings.gyroscopeMinAngleY;
+
+          const degreesPerPixelX = totalAngleX / this.width;
+          const degreesPerPixelY = totalAngleY / this.height;
+
+          const angleX = event.gamma - (this.settings.gyroscopeMinAngleX + this.gammazero);
+          const angleY = event.beta - (this.settings.gyroscopeMinAngleY + this.betazero);
+
+          const posX = angleX / degreesPerPixelX;
+          const posY = angleY / degreesPerPixelY;
+
+          if (this.updateCall !== null) {
+            cancelAnimationFrame(this.updateCall);
+          }
+
+          this.event = {
+            clientX: posX + this.left,
+            clientY: posY + this.top,
+          };
+
+          this.updateCall = requestAnimationFrame(this.updateBind);
+        }
+
+        onMouseEnter() {
+          this.updateElementPosition();
+          this.element.style.willChange = "transform";
+          this.setTransition();
+        }
+
+        onMouseMove(event) {
+          if (this.updateCall !== null) {
+            cancelAnimationFrame(this.updateCall);
+          }
+
+          this.event = event;
+          this.updateCall = requestAnimationFrame(this.updateBind);
+        }
+
+        onMouseLeave() {
+          this.setTransition();
+
+          if (this.settings.reset) {
+            requestAnimationFrame(this.resetBind);
+          }
+        }
+
+        reset() {
+          this.event = {
+            clientX: this.left + this.width / 2,
+            clientY: this.top + this.height / 2
+          };
+
+          if (this.element && this.element.style) {
+            this.element.style.transform = `perspective(${this.settings.perspective}px) ` +
+              `rotateX(0deg) ` +
+              `rotateY(0deg) ` +
+              `scale3d(1, 1, 1)`;
+          }
+
+          this.resetGlare();
+        }
+
+        resetGlare() {
+          if (this.glare) {
+            this.glareElement.style.transform = "rotate(180deg) translate(-50%, -50%)";
+            this.glareElement.style.opacity = "0";
+          }
+        }
+
+        updateInitialPosition() {
+          if (this.settings.startX === 0 && this.settings.startY === 0) {
+            return;
+          }
+
+          this.onMouseEnter();
+
+          if (this.fullPageListening) {
+            this.event = {
+              clientX: (this.settings.startX + this.settings.max) / (2 * this.settings.max) * this.clientWidth,
+              clientY: (this.settings.startY + this.settings.max) / (2 * this.settings.max) * this.clientHeight
+            };
+          } else {
+            this.event = {
+              clientX: this.left + ((this.settings.startX + this.settings.max) / (2 * this.settings.max) * this.width),
+              clientY: this.top + ((this.settings.startY + this.settings.max) / (2 * this.settings.max) * this.height)
+            };
+          }
+
+
+          let backupScale = this.settings.scale;
+          this.settings.scale = 1;
+          this.update();
+          this.settings.scale = backupScale;
+          this.resetGlare();
+        }
+
+        getValues() {
+          let x, y;
+
+          if (this.fullPageListening) {
+            x = this.event.clientX / this.clientWidth;
+            y = this.event.clientY / this.clientHeight;
+          } else {
+            x = (this.event.clientX - this.left) / this.width;
+            y = (this.event.clientY - this.top) / this.height;
+          }
+
+          x = Math.min(Math.max(x, 0), 1);
+          y = Math.min(Math.max(y, 0), 1);
+
+          let tiltX = (this.reverse * (this.settings.max - x * this.settings.max * 2)).toFixed(2);
+          let tiltY = (this.reverse * (y * this.settings.max * 2 - this.settings.max)).toFixed(2);
+          let angle = Math.atan2(this.event.clientX - (this.left + this.width / 2), -(this.event.clientY - (this.top + this.height / 2))) * (180 / Math.PI);
+
+          return {
+            tiltX: tiltX,
+            tiltY: tiltY,
+            percentageX: x * 100,
+            percentageY: y * 100,
+            angle: angle
+          };
+        }
+
+        updateElementPosition() {
+          let rect = this.element.getBoundingClientRect();
+
+          this.width = this.element.offsetWidth;
+          this.height = this.element.offsetHeight;
+          this.left = rect.left;
+          this.top = rect.top;
+        }
+
+        update() {
+          let values = this.getValues();
+
+          this.element.style.transform = "perspective(" + this.settings.perspective + "px) " +
+            "rotateX(" + (this.settings.axis === "x" ? 0 : values.tiltY) + "deg) " +
+            "rotateY(" + (this.settings.axis === "y" ? 0 : values.tiltX) + "deg) " +
+            "scale3d(" + this.settings.scale + ", " + this.settings.scale + ", " + this.settings.scale + ")";
+
+          if (this.glare) {
+            this.glareElement.style.transform = `rotate(${values.angle}deg) translate(-50%, -50%)`;
+            this.glareElement.style.opacity = `${values.percentageY * this.settings["max-glare"] / 100}`;
+          }
+
+          this.element.dispatchEvent(new CustomEvent("tiltChange", {
+            "detail": values
+          }));
+
+          this.updateCall = null;
+        }
+
+        /**
+         * Appends the glare element (if glarePrerender equals false)
+         * and sets the default style
+         */
+        prepareGlare() {
+          // If option pre-render is enabled we assume all html/css is present for an optimal glare effect.
+          if (!this.glarePrerender) {
+            // Create glare element
+            const jsTiltGlare = document.createElement("div");
+            jsTiltGlare.classList.add("js-tilt-glare");
+
+            const jsTiltGlareInner = document.createElement("div");
+            jsTiltGlareInner.classList.add("js-tilt-glare-inner");
+
+            jsTiltGlare.appendChild(jsTiltGlareInner);
+            this.element.appendChild(jsTiltGlare);
+          }
+
+          this.glareElementWrapper = this.element.querySelector(".js-tilt-glare");
+          this.glareElement = this.element.querySelector(".js-tilt-glare-inner");
+
+          if (this.glarePrerender) {
+            return;
+          }
+
+          Object.assign(this.glareElementWrapper.style, {
+            "position": "absolute",
+            "top": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "100%",
+            "overflow": "hidden",
+            "pointer-events": "none"
+          });
+
+          Object.assign(this.glareElement.style, {
+            "position": "absolute",
+            "top": "50%",
+            "left": "50%",
+            "pointer-events": "none",
+            "background-image": `linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)`,
+            "transform": "rotate(180deg) translate(-50%, -50%)",
+            "transform-origin": "0% 0%",
+            "opacity": "0",
+          });
+
+          this.updateGlareSize();
+        }
+
+        updateGlareSize() {
+          if (this.glare) {
+            const glareSize = (this.element.offsetWidth > this.element.offsetHeight ? this.element.offsetWidth : this.element.offsetHeight) * 2;
+
+            Object.assign(this.glareElement.style, {
+              "width": `${glareSize}px`,
+              "height": `${glareSize}px`,
+            });
+          }
+        }
+
+        updateClientSize() {
+          this.clientWidth = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+
+          this.clientHeight = window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight;
+        }
+
+        onWindowResize() {
+          this.updateGlareSize();
+          this.updateClientSize();
+        }
+
+        setTransition() {
+          clearTimeout(this.transitionTimeout);
+          this.element.style.transition = this.settings.speed + "ms " + this.settings.easing;
+          if (this.glare) this.glareElement.style.transition = `opacity ${this.settings.speed}ms ${this.settings.easing}`;
+
+          this.transitionTimeout = setTimeout(() => {
+            this.element.style.transition = "";
+            if (this.glare) {
+              this.glareElement.style.transition = "";
+            }
+          }, this.settings.speed);
+
+        }
+
+        /**
+         * Method return patched settings of instance
+         * @param {boolean} settings.reverse - reverse the tilt direction
+         * @param {number} settings.max - max tilt rotation (degrees)
+         * @param {startX} settings.startX - the starting tilt on the X axis, in degrees. Default: 0
+         * @param {startY} settings.startY - the starting tilt on the Y axis, in degrees. Default: 0
+         * @param {number} settings.perspective - Transform perspective, the lower the more extreme the tilt gets
+         * @param {string} settings.easing - Easing on enter/exit
+         * @param {number} settings.scale - 2 = 200%, 1.5 = 150%, etc..
+         * @param {number} settings.speed - Speed of the enter/exit transition
+         * @param {boolean} settings.transition - Set a transition on enter/exit
+         * @param {string|null} settings.axis - What axis should be disabled. Can be X or Y
+         * @param {boolean} settings.glare - What axis should be disabled. Can be X or Y
+         * @param {number} settings.max-glare - the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+         * @param {boolean} settings.glare-prerender - false = VanillaTilt creates the glare elements for you, otherwise
+         * @param {boolean} settings.full-page-listening - If true, parallax effect will listen to mouse move events on the whole document, not only the selected element
+         * @param {string|object} settings.mouse-event-element - String selector or link to HTML-element what will be listen mouse events
+         * @param {boolean} settings.reset - false = If the tilt effect has to be reset on exit
+         * @param {gyroscope} settings.gyroscope - Enable tilting by deviceorientation events
+         * @param {gyroscopeSensitivity} settings.gyroscopeSensitivity - Between 0 and 1 - The angle at which max tilt position is reached. 1 = 90deg, 0.5 = 45deg, etc..
+         * @param {gyroscopeSamples} settings.gyroscopeSamples - How many gyroscope moves to decide the starting position.
+         */
+        extendSettings(settings) {
+          let defaultSettings = {
+            reverse: false,
+            max: 15,
+            startX: 0,
+            startY: 0,
+            perspective: 1000,
+            easing: "cubic-bezier(.03,.98,.52,.99)",
+            scale: 1,
+            speed: 300,
+            transition: true,
+            axis: null,
+            glare: false,
+            "max-glare": 1,
+            "glare-prerender": false,
+            "full-page-listening": false,
+            "mouse-event-element": null,
+            reset: true,
+            gyroscope: true,
+            gyroscopeMinAngleX: -45,
+            gyroscopeMaxAngleX: 45,
+            gyroscopeMinAngleY: -45,
+            gyroscopeMaxAngleY: 45,
+            gyroscopeSamples: 10
+          };
+
+          let newSettings = {};
+          for (var property in defaultSettings) {
+            if (property in settings) {
+              newSettings[property] = settings[property];
+            } else if (this.element.hasAttribute("data-tilt-" + property)) {
+              let attribute = this.element.getAttribute("data-tilt-" + property);
+              try {
+                newSettings[property] = JSON.parse(attribute);
+              } catch (e) {
+                newSettings[property] = attribute;
+              }
+
+            } else {
+              newSettings[property] = defaultSettings[property];
+            }
+          }
+
+          return newSettings;
+        }
+
+        static init(elements, settings) {
+          if (elements instanceof Node) {
+            elements = [elements];
+          }
+
+          if (elements instanceof NodeList) {
+            elements = [].slice.call(elements);
+          }
+
+          if (!(elements instanceof Array)) {
+            return;
+          }
+
+          elements.forEach((element) => {
+            if (!("vanillaTilt" in element)) {
+              element.vanillaTilt = new VanillaTilt(element, settings);
+            }
+          });
+        }
+      }
+
+      if (typeof document !== "undefined") {
+        /* expose the class to window */
+        window.VanillaTilt = VanillaTilt;
+
+        /**
+         * Auto load
+         */
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+      }
+
+      return VanillaTilt;
+
+      }());
+    </script>
+    <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
